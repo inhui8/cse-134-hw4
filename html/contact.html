@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>contact</title>
+    <link rel="stylesheet" href="/css/Home.css"/>
+</head>
+<body>
+    <div class="background">
+        <h1 id="custom"><a href="/Home.html">Yinghui's Website</a></h1>
+        
+        <header>
+            <nav id ="NavBar">
+                <a href="/html/About.html">AboutMe</a>
+                <a href="/html/project.html">Project</a>
+                <a href="/html/education.html">Education</a>
+                <a href="/html/contact.html">ContactMe</a>
+            </nav>
+        </header>
+        <img src="/source/rabbit.png" id ="rabbit" alt="rabbit" width="100vw">
+    </div>
+    <br />
+    <section class="contact">
+        <label for="Email">Email:</label>
+        <p>inhui8577@gmail.com</p>
+        <label for="Phone">Phone:</label>
+        <p>626-365-4335</p>
+    </section>
+    <form class="contact">
+        <fieldset>
+            <legend>Want to give advise or hire me?:</legend>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"/><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname"/><br><br>
+            <label for="Company">Company website:</label>
+            <input type="text" id="Company" name="Company"/><br><br>
+            <label for="Suggestions">Write down Suggestions:</label><br><br>
+            <textarea id="Suggestions" name="Suggestions" rows="4" cols="42">
+            </textarea><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+    
+    <footer>
+        <hr>
+        <h3>This website made by Yinghui Sun</h3>
+    </footer>  
+        
+</body>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    
+    ctx.font = "30px Verdana";
+    // Create gradient
+    var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+    gradient.addColorStop("0", "magenta");
+    gradient.addColorStop("0.5", "blue");
+    gradient.addColorStop("1.0", "red");
+    // Fill with gradient
+    ctx.fillStyle = gradient;
+    ctx.fillText("Keep Smile!", 10, 90);
+    </script>
+</html>

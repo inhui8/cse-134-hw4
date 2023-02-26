@@ -1,0 +1,115 @@
+:root {
+    --back-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.897);
+    --font-color: white;
+}
+@font-face {
+    font-family: "customFont";
+    src: url('../font/static/Rubik-BlackItalic.ttf') format('truetype');
+    font-display: swap;
+}
+#custom{
+    font-family: customFont, sans-serif;
+}
+a{
+    transition: color 3s;
+}
+a:hover{
+    color: red !important;
+}
+#rabbit{
+    animation: change 5s linear infinite;   
+
+}
+
+@keyframes change{
+    0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(20%);
+      }
+}
+body{
+    color: var(--font-color);
+    margin: 0;
+}
+a{
+    font-size: 1.5rem;
+    color: white;
+}
+.background{
+    background-image: url("/source/computer.jpg");
+    background-size: cover;
+    background-color: var(--back-color);
+    padding-bottom: 40vw;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+}
+
+div *{
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+main{
+    display: grid;
+    grid-template-rows: auto auto;
+    margin-right: 2vw;
+    padding: 1vw;
+}
+
+main div {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+    gap: 1vw;
+}
+main div span{
+    border: 3px solid;
+    border-radius: 5%;
+    background-color: rgba(49, 48, 48, 0.738);
+    padding-bottom: 2vh;
+    margin: 3vw;
+}
+main div span img{
+    border-radius: 6%;
+    width: 70%;
+    height: auto;
+}
+
+Nav {
+    /*Display: Flex;
+    Align-Items: Center;
+    Justify-Content: Space-Between;
+    Padding: 1.5vh 1vw;*/
+    float: right;
+}
+
+Nav a {
+    color: rgb(255, 255, 255);
+    font-size: 1.3rem;
+  }
+#tables{
+    margin-left: auto; 
+    margin-right: auto;
+}
+#School{
+    text-align: center;
+}
+.contact{
+    margin: 1%;
+}
+@media screen and (max-width: 1079px) {
+    body main div {
+        display: grid;
+        grid-template-columns: auto;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 450px) {
+    body main div {
+        display: grid;
+        grid-template-columns: auto;
+        text-align: center;
+    }
+}

@@ -1,0 +1,161 @@
+:root {
+    --back-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.897);
+    --font-color: white;
+}
+body{ 
+    color: var(--font-color);
+    margin: 0;
+}
+div *{
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+a{
+    font-size: 1.5rem;
+    color: white;
+}
+@font-face {
+    font-family: "customFont";
+    src: url('../font/static/Rubik-BlackItalic.ttf') format('truetype');
+    font-display: swap;
+}
+#custom{
+    font-family: customFont, sans-serif;
+}
+a{
+    transition: color 3s;
+}
+a:hover{
+    color: red !important;
+}
+#rabbit{
+    animation: change 5s linear infinite;   
+}
+
+@keyframes change{
+    0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(20%);
+      }
+}
+.background{
+    background-image: url("/source/computer.jpg");
+    background-size: cover;
+    background-color: var(--back-color);
+    padding-bottom: 40vw;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+}
+Nav {
+    /*Display: Flex;
+    Align-Items: Center;
+    Justify-Content: Space-Between;
+    Padding: 1.5vh 1vw;*/
+    float: right;
+}
+
+Nav a {
+    color: rgb(255, 255, 255);
+    font-size: 1.3rem;
+  }
+#middle{
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: left;
+    gap: 1vw;  
+    border: 3px solid;
+    padding: 2vh;
+    margin: 2vh;
+    border-radius: 5%;
+    background-color: rgba(49, 48, 48, 0.738);
+}
+#middle span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.all{
+    border-radius: 6%;
+    width: 70%;
+    height: auto;
+}
+#journey{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: left;
+    gap: 1vw;  
+    border: 3px solid;
+    padding: 2vh;
+    margin: 2vh;
+    border-radius: 5%;
+    background-color: rgba(49, 48, 48, 0.738);
+}
+#friends{
+    display: grid;
+    grid-template-rows: auto auto;
+    text-align: left;
+    gap: 2vw;  
+    
+}
+#friendscont{
+    border: 3px solid;
+    padding: 2vh;
+    margin: 2vh;
+    border-radius: 5%;
+    background-color: rgba(49, 48, 48, 0.738);
+}
+#friendspic{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    text-align: left;
+    gap: 2vw; 
+    border: 3px solid;
+    padding: 2vh;
+    margin: 2vh;
+    border-radius: 5%;
+    background-color: rgba(49, 48, 48, 0.738);
+}
+@media screen and (max-width: 1079px) {
+    #middle{
+        display: grid;
+        grid-template-columns: auto;
+        text-align: left;
+        gap: 1vw;  
+    }
+    #journey{
+        display: grid;
+        grid-template-columns: auto auto;
+        text-align: left;
+        gap: 1vw;  
+    }
+    #friendspic{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        text-align: left;
+        gap: 2vw; 
+    }
+}
+@media screen and (max-width: 550px) {
+    #middle{
+        display: grid;
+        grid-template-columns: auto;
+        text-align: left;
+        gap: 1vw;  
+    }
+    #journey{
+        display: grid;
+        grid-template-columns: auto;
+        text-align: left;
+        gap: 1vw;  
+    }
+    #friendspic{
+        display: grid;
+        grid-template-columns: auto auto;
+        text-align: left;
+        gap: 1vw;  
+
+    }
+}
