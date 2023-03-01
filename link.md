@@ -1,2 +1,4 @@
-github URL: https://github.com/inhui8/cse-134-hw4
-Netlify URL: https://in-hui-hw4.netlify.app
+part1 & part2: https://in-hui-hw4.netlify.app/nativedialogs.html
+part3: https://in-hui-hw4.netlify.app/crud.html
+part4: https://in-hui-hw4.netlify.app/styledcrud.html
+part5: https://in-hui-hw4.netlify.app
