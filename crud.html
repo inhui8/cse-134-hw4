@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@2.3.1/dist/purify.min.js"></script>
-    <script type="module" src="blog.js"></script>
+    <script type="module">
+        import { create, add} from './blog.js';
+        document.addEventListener('DOMContentLoaded', () => {
+        const create1 = document.getElementById("button3");
+        create1.addEventListener('click', create);
+        localStorage.setItem("My-food", JSON.stringify(["My-food", "2023-02-01", "This is the first post"]));
+        localStorage.setItem("My-friend", JSON.stringify(["My-friend", "2023-02-02", "This is the second post"]));
+        localStorage.setItem("My-hoobies", JSON.stringify(["My-hoobies", "2023-02-03", "This is the third post"]));
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            const value = JSON.parse(localStorage.getItem(key));
+            console.log((value[0]));
+            add(value[0], value[1], value[2]);
+        }       
+        
+    });
+    </script>
     <template id="t1">
         <section id="d1">
             <dialog open>

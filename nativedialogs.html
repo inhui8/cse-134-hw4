@@ -10,28 +10,40 @@
         import { my_alert, my_confirm, my_prompt} from './customdialog.js';
         
         function alert_func() {
-            alert("This is alert!");
+            output.textContent = " ";
+            setTimeout(() => {
+                alert("This is alert!");
+            },0);
         }
         function confirm_func() {
-            output.textContent = `The value returned by the confirm method is: ${window.confirm("Continue or not?")}`;
+            output.textContent = " ";
+            setTimeout(() => {
+                output.textContent = `The value returned by the confirm method is: ${window.confirm("Continue or not?")}`;
+            },0);
         }
         function prompt_func() {
-            const name = window.prompt("Enter your name:");
-            if (name) {
-                output.textContent = `Your name is: ${name}`;
-            } else {
-                output.textContent = "User didn't enter anything";
-            }
+            output.textContent = " ";
+            setTimeout(() => {
+                const name = window.prompt("Enter your name:");
+                if (name) {
+                    output.innerHTML = `Your name is: ${name}`;
+                } else {
+                    output.textContent = "User didn't enter anything";
+                }
+                }, 0);
         }
         function safer_prompt_func() {
-            const message = DOMPurify.sanitize("Enter your name:");
-            const name = window.prompt(message);
-            if (name) {
-                const saferName = DOMPurify.sanitize(name);
-                output.textContent = `Your name is: ${saferName}`;
-            } else {
-                output.textContent = "User didn't enter anything";
-            }
+            output.textContent = " ";
+            setTimeout(() => {
+                const message = DOMPurify.sanitize("Enter your name:");
+                const name = window.prompt(message);
+                if (name) {
+                    const saferName = DOMPurify.sanitize(name);
+                    output.innerHTML = `Your name is: ${saferName}`;
+                } else {
+                    output.textContent = "User didn't enter anything";
+                }
+            },0);
         }
         document.addEventListener('DOMContentLoaded', () => {
             const alert = document.getElementById('alert');
@@ -82,11 +94,14 @@
     </template>
 </head>
 <body>
+    <h1>Simple Dialogs</h1>
     <button id="alert">Alert</button>
     <button id="confirm">Confirm</button>
     <button id="prompt">Prompt</button>
     <button id="safer_prompt">Safer Prompt</button>
-    <div id="output"></div>
+    <br>
+    <output id="output"></output>
+    <h1>Custom Dialogs</h1>
     <button id="alert2">Alert</button>
     <button id="confirm2">confirm</button>
     <button id="prompt2">prompt</button>
