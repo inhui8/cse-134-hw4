@@ -19,7 +19,7 @@ a:hover{
 }
 #rabbit{
     animation: change 5s linear infinite;   
-
+    position: fixed;
 }
 
 @keyframes change{
@@ -71,6 +71,9 @@ main div span{
     padding-bottom: 2vh;
     margin: 3vw;
 }
+main div span:hover {
+    background-color: rgb(1, 20, 37);
+}
 main div span img{
     border-radius: 6%;
     width: 70%;
@@ -82,7 +85,7 @@ Nav {
     Align-Items: Center;
     Justify-Content: Space-Between;
     Padding: 1.5vh 1vw;*/
-    float: right;
+    float: right; 
 }
 
 Nav a {
@@ -98,6 +101,10 @@ Nav a {
 }
 .contact{
     margin: 1%;
+}
+.back {
+    position: fixed;
+    background-color: rgb(96, 207, 230);
 }
 @media screen and (max-width: 1079px) {
     body main div {

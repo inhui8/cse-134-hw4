@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@2.3.1/dist/purify.min.js"></script>
+    <script type="module">
+        import { my_alert, my_confirm, my_prompt} from './customdialog.js';
+        
+        function alert_func() {
+            alert("This is alert!");
+        }
+        function confirm_func() {
+            output.textContent = `The value returned by the confirm method is: ${window.confirm("Continue or not?")}`;
+        }
+        function prompt_func() {
+            const name = window.prompt("Enter your name:");
+            if (name) {
+                output.textContent = `Your name is: ${name}`;
+            } else {
+                output.textContent = "User didn't enter anything";
+            }
+        }
+        function safer_prompt_func() {
+            const message = DOMPurify.sanitize("Enter your name:");
+            const name = window.prompt(message);
+            if (name) {
+                const saferName = DOMPurify.sanitize(name);
+                output.textContent = `Your name is: ${saferName}`;
+            } else {
+                output.textContent = "User didn't enter anything";
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const alert = document.getElementById('alert');
+            const confirm = document.getElementById('confirm');
+            const prompt = document.getElementById('prompt');
+            const safer_prompt = document.getElementById('safer_prompt');
+            alert.addEventListener('click', alert_func);
+            confirm.addEventListener("click", confirm_func);
+            prompt.addEventListener("click", prompt_func);
+            safer_prompt.addEventListener("click", safer_prompt_func)
+            alert2.addEventListener('click', my_alert);
+            confirm2.addEventListener('click', my_confirm);
+            prompt2.addEventListener('click', my_prompt);
+        });
+    </script>
+    <template id="t1">
+        <section id="d1">
+            <dialog open>
+                <h5>Alert pressed.</h5>
+                <button id="button1">OK</button>
+            </dialog>
+        </section>
+    </template>
+
+    <template id="t2">
+        <section id="d2">
+            <dialog open>
+                <h5>Do you confirm this?</h5>
+                <div>
+                    <button id="button2">Cancel</button>
+                    <button id="button3">OK</button>
+                </div>
+            </dialog>
+        </section>
+    </template>
+    <template id="t3">
+        <section id="d3">
+            <dialog open>
+                <label for="your_name">What is your name?</label>
+                <br>
+                <input type="text" id="your_name" name="your_name">
+                <div>
+                    <button id="button4">Cancel</button>
+                    <button id="button5">OK</button>
+                </div>
+            </dialog>
+        </section>
+    </template>
+</head>
+<body>
+    <button id="alert">Alert</button>
+    <button id="confirm">Confirm</button>
+    <button id="prompt">Prompt</button>
+    <button id="safer_prompt">Safer Prompt</button>
+    <div id="output"></div>
+    <button id="alert2">Alert</button>
+    <button id="confirm2">confirm</button>
+    <button id="prompt2">prompt</button>
+    <div id="dia"></div>
+    <div id="contentA"></div>
+</body>
+</html>

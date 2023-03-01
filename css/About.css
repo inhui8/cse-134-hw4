@@ -31,8 +31,13 @@ a:hover{
 }
 #rabbit{
     animation: change 5s linear infinite;   
+    position: fixed;
 }
-
+.back {
+    position: fixed;
+    
+    background-color: rgb(96, 207, 230); 
+}
 @keyframes change{
     0% {
         transform: translateX(0);
@@ -48,6 +53,9 @@ a:hover{
     padding-bottom: 40vw;
     background-repeat: no-repeat;
     padding-top: 10px;
+}
+img:not(#rabbit):hover {
+    width: 100%;
 }
 Nav {
     /*Display: Flex;
