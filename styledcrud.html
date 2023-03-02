@@ -28,10 +28,10 @@
         <section id="d1">
             <dialog open>
                 <h2>add post details here</h2>
-                <label for="Title">Title: </label>
-                <input type="text" id="Title" name="Title">
+                <label for="Title">Title:  </label>
+                <input type="text" id="Title" name="Title"><br>
                 <label for="Date">Date: </label>
-                <input type="date" id="Date" name="Date">
+                <input type="date" id="Date" name="Date"><br>
                 <label for="Summary">Summary: </label>
                 <textarea id="Summary" name="Summary" rows="5" cols="18"></textarea>
                 <div>
@@ -44,6 +44,16 @@
     <style>
         dialog {
             background-color:rgba(255, 228, 196, 0.719);
+            display: grid;
+            border-radius: 12px;
+        }
+
+        #Title, #Date{
+            margin: 1vw;
+        }
+        label {
+            display: inline-block;
+            text-align: left;
         }
         dialog div{
             margin-top: 2vw;
